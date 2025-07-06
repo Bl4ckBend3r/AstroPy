@@ -1,12 +1,12 @@
-from astro.sun_moon import julian_day, sun_position, moon_position, get_sign
+from astro.sun_moon import julian_day, sun_position, moon_position
 
-# Obliczenia czasu
+# Oblicz JD
 jd = julian_day(2000, 1, 2, 9 + 37/60)
 
-# Pozycje
-sun_lon = sun_position(jd)
-moon_lon = moon_position(jd)
+# Oblicz pozycje
+sun = sun_position(jd)
+moon = moon_position(jd)
 
-# Wynik
-print(f"Słońce: {sun_lon:.2f}° → {get_sign(sun_lon)}")
-print(f"Księżyc: {moon_lon:.2f}° → {get_sign(moon_lon)}")
+# Wyświetlenie wyników
+print(f"Słońce: {sun['lon']:.2f}° → {sun['deg_in_sign']:.2f}° {sun['sign']}")
+print(f"Księżyc: {moon['lon']:.2f}° → {moon['deg_in_sign']:.2f}° {moon['sign']}")
